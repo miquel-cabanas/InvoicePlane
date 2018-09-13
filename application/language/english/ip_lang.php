@@ -344,10 +344,17 @@ $lang = array(
     'paid'                                         => 'Paid',
     'password'                                     => 'Password',
     'password_changed'                             => 'Password successfully changed',
+    'password_current'                             => 'Current Password',
+    'password_current_enter'                       => 'Enter your current password',
+    'password_new'                                 => 'New Password',
+    'password_new_enter'                           => 'Enter your new password (8 or more characters)',
+    'password_new_verify'                          => 'Confirm New Password',
+    'password_new_enter_again'                     => 'Enter again your new password',
     'password_reset'                               => 'Password Reset',
     'password_reset_email'                         => 'You requested a new password for your Installation of InvoicePlane. Please click the following link to reset your password:',
     'password_reset_info'                          => 'You will get an Email with a link to reset your password.',
     'password_reset_failed'                        => 'An error occurred while trying to send your password reset email. Please review the application logs or contact the system administrator.',
+    'password_strength'                            => 'Password strength: red is weak, yellow is so-and-so, green is strong.',
     'pay_now'                                      => 'Pay Now',
     'payment'                                      => 'Payment',
     'payment_cannot_exceed_balance'                => 'Payment amount cannot exceed invoice balance.',
@@ -695,6 +702,7 @@ $lang = array(
     'sumex_veka'                                   => 'VEKA',
     'user_iban'                                    => 'IBAN',
     'user_subscriber_number'                       => 'Subscriber Number',
+
     // Errors
     'validator_fail'                               => 'Unable to process field %s: %s',
 

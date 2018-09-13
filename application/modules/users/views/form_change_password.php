@@ -24,11 +24,21 @@
 
                     <div class="panel-body">
                         <div class="form-group">
-                            <label for="user_password">
-                                <?php _trans('password'); ?>
+                            <label for="user_current_password">
+                                <?php _trans('password_current'); ?>
                             </label>
-                            <input type="password" name="user_password" id="user_password"
-                                   class="form-control passwordmeter-input">
+                            <input type="password" name="user_current_password" id="user_current_password"
+                            	class="form-control"
+                            	placeholder="<?php _trans('password_current_enter'); ?>">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="user_new_password">
+                                <?php _trans('password_new'); ?>
+                            </label>
+                            <input type="password" name="user_new_password" id="user_new_password"
+                                class="form-control passwordmeter-input"
+								placeholder="<?php _trans('password_new_enter'); ?>">
                             <div class="progress" style="height:3px;">
                                 <div class="progress-bar progress-bar-danger passmeter passmeter-1"
                                      style="width: 33%"></div>
@@ -37,14 +47,20 @@
                                 <div class="progress-bar progress-bar-success passmeter passmeter-3"
                                      style="display: none; width: 34%"></div>
                             </div>
+          					<div>
+								<small id="password_strength_help" class="form-text text-muted"> <!-- #2 -->
+									<?php _trans('password_strength')?>
+								</small>
+							</div>
                         </div>
 
                         <div class="form-group">
-                            <label for="user_passwordv">
-                                <?php _trans('verify_password'); ?>
+                            <label for="user_new_password_vrfy">
+                                <?php _trans('password_new_verify'); ?>
                             </label>
-                            <input type="password" name="user_passwordv" id="user_passwordv"
-                                   class="form-control">
+                            <input type="password" name="user_new_password_vrfy" id="user_new_password_vrfy"
+                                class="form-control"
+                            	placeholder="<?php _trans('password_new_enter_again'); ?>">
                         </div>
                     </div>
 

@@ -221,19 +221,44 @@ class Mdl_Users extends Response_Model
     public function validation_rules_change_password()
     {
         return array(
-            'user_password' => array(
-                'field' => 'user_password',
-                'label' => trans('password'),
-                'rules' => 'required'
+            'user_current_password' => array(
+                'field' => 'user_current_password',
+                'label' => trans('password_current'),
+                'rules' => 'required|min_length[8]|callback_password_validation'
             ),
-            'user_passwordv' => array(
-                'field' => 'user_passwordv',
-                'label' => trans('verify_password'),
-                'rules' => 'required|matches[user_password]'
+            'user_new_password' => array(
+                'field' => 'user_new_password',
+                'label' => trans('password_new'),
+                'rules' => 'required|min_length[8]|differs[current_password]'
+            ),
+            'user_new_password_vrfy' => array(
+                'field' => 'user_new_password_vrfy',
+                'label' => trans('password_new_verify'),
+                'rules' => 'required|matches[user_new_password]'
             )
-        );
+    	);
     }
 
+    /**
+     * @return bool
+     *
+     * do not use the username because it is not unique as of v1.5.10, instead
+     * use the email address which has the unique attribute in IP db.
+     */
+    public function password_validation($field_value)
+    {
+        $CI =& get_instance();
+        $user_email = $CI->session->userdata['user_email'];
+
+        $this->load->model('sessions/mdl_sessions');
+
+        if ($this->mdl_sessions->auth($user_email, $field_value)) {
+            return true;
+        } else {
+            $this->form_validation->set_message('password_validation', 'The {field} field does not match your current password.');
+            return false;
+        }
+    }
 
     /**
      * @return array

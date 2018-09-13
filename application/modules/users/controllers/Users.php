@@ -161,7 +161,7 @@ class Users extends Admin_Controller
         }
 
         if ($this->mdl_users->run_validation('validation_rules_change_password')) {
-            $this->mdl_users->save_change_password($user_id, $this->input->post('user_password'));
+            $this->mdl_users->save_change_password($user_id, $this->input->post('user_new_password'));
             redirect('users/form/' . $user_id);
         }
 

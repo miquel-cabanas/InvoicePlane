@@ -98,7 +98,7 @@ $cv = $this->controller->view_data["custom_values"];
                             <?php } else { ?>
                                 <div class="form-group">
                                     <a href="<?php echo site_url('users/change_password/' . $id); ?>"
-                                       class="btn btn-default">
+                                       class="btn btn-default btn-primary">
                                         <?php _trans('change_password'); ?>
                                     </a>
                                 </div>
@@ -110,7 +110,7 @@ $cv = $this->controller->view_data["custom_values"];
                                 </label>
                                 <select name="user_language" id="user_language" class="form-control simple-select">
                                     <option value="system">
-                                        <?php echo trans('use_system_language') ?>
+                                        <?php _trans('use_system_language') ?>
                                     </option>
                                     <?php foreach ($languages as $language) {
                                         $usr_lang = $this->session->userdata('user_language');
